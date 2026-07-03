@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+
+  /* Monochrome editorial-tech base */
+  --color-ink: #0a0a0b;
+  --color-ink-2: #101013;
+  --color-surface: #131316;
+  --color-surface-2: #17171b;
+  --color-line: #26262c;
+  --color-line-2: #34343c;
+  --color-ivory: #f3f1ea;
+  --color-fog: #b6b6bf;
+  --color-muted: #83838d;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-ivory);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-ivory);
+    color: var(--color-ink);
+  }
+
+  /* Focus ring, warm neutral so it reads as premium not "AI blue" */
+  :focus-visible {
+    outline: 2px solid #e6e1d2;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  /* Fine film grain, fixed and non-interactive so it never repaints on scroll */
+  .grain::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .mask-fade-y {
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent);
+  }
+
+  /* Vertical drift for the hero gallery columns */
+  @keyframes drift-up {
+    from { transform: translateY(0); }
+    to { transform: translateY(-50%); }
+  }
+  @keyframes drift-down {
+    from { transform: translateY(-50%); }
+    to { transform: translateY(0); }
+  }
+  .drift-up { animation: drift-up 34s linear infinite; }
+  .drift-down { animation: drift-down 40s linear infinite; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .drift-up, .drift-down { animation: none; }
+  }
+}
