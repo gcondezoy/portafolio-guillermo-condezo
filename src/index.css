@@ -5,16 +5,18 @@
   --font-sans: "Manrope Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
 
-  /* Monochrome editorial-tech base */
-  --color-ink: #0a0a0b;
-  --color-ink-2: #101013;
-  --color-surface: #131316;
-  --color-surface-2: #17171b;
-  --color-line: #26262c;
-  --color-line-2: #34343c;
-  --color-ivory: #f3f1ea;
-  --color-fog: #b6b6bf;
-  --color-muted: #83838d;
+  /* Kodea: navy oscuro + acento teal */
+  --color-ink: #080f26;
+  --color-ink-2: #0b1533;
+  --color-surface: #0f1a3d;
+  --color-surface-2: #14224c;
+  --color-line: #223257;
+  --color-line-2: #31426f;
+  --color-ivory: #eef1fb;
+  --color-fog: #9fabce;
+  --color-muted: #6d7aa1;
+  --color-accent: #1fd3a3;
+  --color-accent-dark: #0c3b30;
 }
 
 @layer base {
@@ -41,13 +43,13 @@
   }
 
   ::selection {
-    background: var(--color-ivory);
+    background: var(--color-accent);
     color: var(--color-ink);
   }
 
   /* Focus ring, warm neutral so it reads as premium not "AI blue" */
   :focus-visible {
-    outline: 2px solid #e6e1d2;
+    outline: 2px solid var(--color-accent);
     outline-offset: 3px;
     border-radius: 2px;
   }

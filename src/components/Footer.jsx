@@ -6,10 +6,12 @@ export default function Footer() {
   return (
     <footer className="border-t border-line/70">
       <div className="mx-auto flex max-w-[1400px] flex-col gap-8 px-5 py-12 sm:px-8 md:flex-row md:items-center md:justify-between">
-        <div>
-          <p className="font-display text-lg font-semibold tracking-tight">{profile.name}</p>
-          <p className="mt-1 text-sm text-muted">
-            {profile.role} · {profile.location}
+        <div className="flex flex-col gap-4">
+          <span className="inline-flex w-fit items-center rounded-xl bg-white px-4 py-3">
+            <img src="/kodea-logo.png" alt="Kodea" className="h-7 w-auto" />
+          </span>
+          <p className="text-sm text-muted">
+            {profile.role} · por {profile.name} · {profile.location}
           </p>
         </div>
 
@@ -43,7 +45,7 @@ export default function Footer() {
       </div>
       <div className="border-t border-line/50">
         <p className="mx-auto max-w-[1400px] px-5 py-6 font-mono text-xs text-muted sm:px-8">
-          © {year} {profile.name}. Hecho con React, Vite y Tailwind.
+          © {year} {profile.brand}. Hecho con React, Vite y Tailwind.
         </p>
       </div>
     </footer>

@@ -114,7 +114,7 @@ export default function ProjectModal({ project, onClose }) {
                       href={project.live}
                       target="_blank"
                       rel="noreferrer"
-                      className="group inline-flex items-center gap-2 rounded-full bg-ivory px-5 py-2.5 text-sm font-semibold text-ink transition-transform active:scale-[0.97]"
+                      className="group inline-flex items-center gap-2 rounded-full bg-accent px-5 py-2.5 text-sm font-semibold text-ink transition-transform active:scale-[0.97]"
                     >
                       <Globe size={16} weight="bold" />
                       Ver web

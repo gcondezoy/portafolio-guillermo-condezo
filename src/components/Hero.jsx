@@ -25,8 +25,8 @@ export default function Hero() {
         <motion.p {...fade(0)} className="mb-7 inline-flex items-center gap-2.5 font-mono text-xs tracking-widest text-fog">
           {profile.available && (
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/70" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent/70" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
             </span>
           )}
           <span className="uppercase">{profile.availableText}</span>
@@ -47,7 +47,7 @@ export default function Hero() {
           <Magnetic
             href="#proyectos"
             strength={0.4}
-            className="group inline-flex items-center gap-2 rounded-full bg-ivory px-6 py-3 text-sm font-semibold text-ink active:scale-[0.97]"
+            className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-ink active:scale-[0.97]"
           >
             Ver proyectos
             <ArrowRight size={16} weight="bold" className="transition-transform group-hover:translate-x-1" />

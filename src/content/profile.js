@@ -2,6 +2,7 @@
 export const profile = {
   name: "Guillermo Condezo",
   initials: "GC",
+  brand: "Kodea",
   role: "Desarrollador web",
   location: "Lima, Perú",
   available: true,

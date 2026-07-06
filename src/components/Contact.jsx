@@ -5,7 +5,7 @@ import { WhatsappLogo, EnvelopeSimple, ArrowUpRight } from '@phosphor-icons/reac
 import { profile } from '../content/profile'
 
 const waMessage = encodeURIComponent(
-  'Hola Guillermo, vi tu portafolio y quiero conversar sobre un proyecto web.',
+  'Hola, vi el portafolio de Kodea y quiero conversar sobre un proyecto web.',
 )
 
 export default function Contact() {
@@ -22,8 +22,8 @@ export default function Contact() {
           {profile.available && (
             <p className="mb-8 inline-flex items-center gap-2.5 font-mono text-xs uppercase tracking-widest text-fog">
               <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400/70" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent/70" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
               </span>
               {profile.availableText}
             </p>
@@ -41,7 +41,7 @@ export default function Contact() {
               target="_blank"
               rel="noreferrer"
               strength={0.3}
-              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-ivory px-7 py-3.5 text-sm font-semibold text-ink active:scale-[0.98] sm:w-auto"
+              className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-ink active:scale-[0.98] sm:w-auto"
             >
               <WhatsappLogo size={18} weight="fill" />
               Escríbeme por WhatsApp

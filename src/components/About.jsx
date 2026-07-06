@@ -13,9 +13,9 @@ export default function About() {
           </h2>
           <Reveal delay={0.12}>
             <p className="mt-6 max-w-[48ch] text-lg leading-relaxed text-fog">
-              Soy {profile.name.split(' ')[0]}, desarrollador web en {profile.location}. Diseño y
-              construyo sitios para negocios reales: rápidos, con buen SEO y pensados para
-              vender. Cada proyecto arranca en blanco, no en una plantilla.
+              Soy {profile.name.split(' ')[0]}, el desarrollador detrás de {profile.brand}, desde{' '}
+              {profile.location}. Diseño y construyo sitios para negocios reales: rápidos, con buen
+              SEO y pensados para vender. Cada proyecto arranca en blanco, no en una plantilla.
             </p>
             <p className="mt-5 max-w-[48ch] leading-relaxed text-muted">
               Trabajo el front-end de principio a fin y, cuando el negocio lo pide, también el

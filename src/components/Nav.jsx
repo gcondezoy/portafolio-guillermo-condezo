@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { motion, useScroll, useMotionValueEvent, useReducedMotion } from 'motion/react'
 import { List, X, ArrowUpRight } from '@phosphor-icons/react'
-import { profile } from '../content/profile'
 import Magnetic from './Magnetic'
+import Logo from './Logo'
 
 const LINKS = [
   { href: '#proyectos', label: 'Proyectos' },
@@ -37,11 +37,8 @@ export default function Nav() {
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-[1400px] items-center justify-between px-5 sm:px-8">
-        <a href="#top" className="flex items-center gap-3">
-          <span className="grid h-8 w-8 place-items-center rounded-lg border border-line-2 bg-surface font-display text-sm font-bold">
-            {profile.initials}
-          </span>
-          <span className="font-display text-[15px] font-semibold tracking-tight">{profile.name}</span>
+        <a href="#top" className="flex items-center" aria-label="Kodea, inicio">
+          <Logo size={34} textClass="text-ivory text-[15px]" />
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
@@ -50,7 +47,7 @@ export default function Nav() {
               <li key={l.href}>
                 <a href={l.href} className="group relative transition-colors hover:text-ivory">
                   {l.label}
-                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-ivory transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute -bottom-1 left-0 h-px w-0 bg-accent transition-all duration-300 group-hover:w-full" />
                 </a>
               </li>
             ))}
@@ -58,7 +55,7 @@ export default function Nav() {
           <Magnetic
             href="#contacto"
             strength={0.3}
-            className="group inline-flex items-center gap-1.5 rounded-full bg-ivory px-4 py-2 text-sm font-medium text-ink active:scale-[0.97]"
+            className="group inline-flex items-center gap-1.5 rounded-full bg-accent px-4 py-2 text-sm font-medium text-ink active:scale-[0.97]"
           >
             Conversemos
             <ArrowUpRight size={15} weight="bold" className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -94,7 +91,7 @@ export default function Nav() {
               <a
                 href="#contacto"
                 onClick={() => setOpen(false)}
-                className="flex items-center justify-center gap-1.5 rounded-full bg-ivory px-4 py-3 text-sm font-medium text-ink"
+                className="flex items-center justify-center gap-1.5 rounded-full bg-accent px-4 py-3 text-sm font-medium text-ink"
               >
                 Conversemos
                 <ArrowUpRight size={15} weight="bold" />
