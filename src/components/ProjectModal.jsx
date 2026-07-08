@@ -1,31 +1,51 @@
-import { useEffect } from 'react'
-import { motion, AnimatePresence, useReducedMotion } from 'motion/react'
-import { X, Check, ArrowUpRight, GithubLogo, Globe, Gauge } from '@phosphor-icons/react'
+import { useEffect, useRef } from 'react'
+import { motion, useReducedMotion } from 'motion/react'
+import {
+  X,
+  Check,
+  ArrowUpRight,
+  GithubLogo,
+  Globe,
+  Gauge,
+  CaretLeft,
+  CaretRight,
+} from '@phosphor-icons/react'
 
 const EASE = [0.16, 1, 0.3, 1]
 
-export default function ProjectModal({ project, onClose }) {
+export default function ProjectModal({ project, onClose, onPrev, onNext, prevProject, nextProject }) {
   const reduce = useReducedMotion()
+  const closeRef = useRef(null)
 
   useEffect(() => {
     if (!project) return
-    const onKey = (e) => e.key === 'Escape' && onClose()
+    const onKey = (e) => {
+      if (e.key === 'Escape') onClose()
+      if (e.key === 'ArrowLeft' && onPrev) onPrev()
+      if (e.key === 'ArrowRight' && onNext) onNext()
+    }
     document.addEventListener('keydown', onKey)
     document.body.style.overflow = 'hidden'
     return () => {
       document.removeEventListener('keydown', onKey)
       document.body.style.overflow = ''
     }
-  }, [project, onClose])
+  }, [project, onClose, onPrev, onNext])
+
+  // Foco al botón de cerrar al abrir (accesibilidad de teclado).
+  useEffect(() => {
+    if (project) closeRef.current?.focus()
+  }, [project])
+
+  // Sin AnimatePresence: su animación de salida se colgaba (StrictMode) y
+  // dejaba un modal zombi. Entrada animada, cierre con desmontaje directo.
+  if (!project) return null
 
   return (
-    <AnimatePresence>
-      {project && (
-        <motion.div
-          className="fixed inset-0 z-[70] flex items-start justify-center overflow-y-auto overscroll-contain bg-ink/80 p-4 backdrop-blur-md sm:p-6 md:items-center"
+    <motion.div
+      className="fixed inset-0 z-[70] flex items-start justify-center overflow-y-auto overscroll-contain bg-ink/80 p-4 backdrop-blur-md sm:p-6 md:items-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
           transition={{ duration: 0.25 }}
           onClick={onClose}
         >
@@ -37,13 +57,13 @@ export default function ProjectModal({ project, onClose }) {
             className="relative my-auto w-full max-w-4xl overflow-hidden rounded-2xl border border-line-2 bg-ink-2"
             initial={reduce ? { opacity: 0 } : { opacity: 0, y: 24, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={reduce ? { opacity: 0 } : { opacity: 0, y: 16, scale: 0.98 }}
             transition={{ duration: 0.4, ease: EASE }}
             onClick={(e) => e.stopPropagation()}
           >
             <span className="block h-1 w-full" style={{ backgroundColor: project.accent }} />
 
             <button
+              ref={closeRef}
               type="button"
               onClick={onClose}
               aria-label="Cerrar"
@@ -53,9 +73,17 @@ export default function ProjectModal({ project, onClose }) {
             </button>
 
             <div className="border-b border-line/70">
-              <img
+              {/* key por proyecto: remonta y hace fade-in al navegar. Sin
+                  AnimatePresence anidado (bloquea el exit del modal padre). */}
+              <motion.img
+                key={project.slug}
                 src={project.shot}
                 alt={`Captura de ${project.name}`}
+                width="1440"
+                height="900"
+                initial={reduce ? false : { opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.3 }}
                 className="aspect-[1440/900] w-full object-cover object-top"
               />
             </div>
@@ -145,10 +173,29 @@ export default function ProjectModal({ project, onClose }) {
                   )}
                 </div>
               )}
+
+              {prevProject && nextProject && (
+                <div className="mt-9 flex items-center justify-between gap-4 border-t border-line/70 pt-5">
+                  <button
+                    type="button"
+                    onClick={onPrev}
+                    className="group inline-flex min-w-0 items-center gap-2 text-sm text-fog transition-colors hover:text-ivory"
+                  >
+                    <CaretLeft size={15} weight="bold" className="shrink-0 transition-transform group-hover:-translate-x-0.5" />
+                    <span className="truncate">{prevProject.name}</span>
+                  </button>
+                  <button
+                    type="button"
+                    onClick={onNext}
+                    className="group inline-flex min-w-0 items-center gap-2 text-sm text-fog transition-colors hover:text-ivory"
+                  >
+                    <span className="truncate">{nextProject.name}</span>
+                    <CaretRight size={15} weight="bold" className="shrink-0 transition-transform group-hover:translate-x-0.5" />
+                  </button>
+                </div>
+              )}
             </div>
           </motion.div>
         </motion.div>
-      )}
-    </AnimatePresence>
   )
 }

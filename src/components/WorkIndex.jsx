@@ -49,8 +49,10 @@ export default function WorkIndex({ onOpen }) {
 
               <span className="flex min-w-0 items-center gap-4">
                 <img
-                  src={p.shot}
+                  src={p.shotSm}
                   alt=""
+                  width="720"
+                  height="450"
                   loading="lazy"
                   className="h-11 w-[70px] shrink-0 rounded-md border border-line object-cover object-top md:hidden"
                 />
@@ -99,8 +101,10 @@ export default function WorkIndex({ onOpen }) {
               </span>
             </div>
             <img
-              src={preview.shot}
+              src={preview.shotSm}
               alt=""
+              width="720"
+              height="450"
               className="aspect-[16/10] w-full object-cover object-top"
             />
           </motion.div>

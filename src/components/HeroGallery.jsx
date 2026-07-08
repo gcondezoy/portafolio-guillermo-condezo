@@ -8,8 +8,10 @@ function Shot({ p }) {
         <span className="font-mono text-[9px] uppercase tracking-widest text-muted">{p.name}</span>
       </div>
       <img
-        src={p.shot}
+        src={p.shotSm}
         alt={p.name}
+        width="720"
+        height="450"
         loading="lazy"
         decoding="async"
         className="aspect-[1440/900] w-full object-cover object-top"

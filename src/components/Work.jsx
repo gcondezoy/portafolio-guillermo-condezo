@@ -1,11 +1,19 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import Reveal from './Reveal'
 import { ClipText } from './TextReveal'
 import WorkIndex from './WorkIndex'
 import ProjectModal from './ProjectModal'
+import { projects } from '../content/projects'
 
 export default function Work() {
-  const [active, setActive] = useState(null)
+  const [activeIdx, setActiveIdx] = useState(null)
+  const active = activeIdx === null ? null : projects[activeIdx]
+  const count = projects.length
+
+  const open = useCallback((p) => setActiveIdx(projects.indexOf(p)), [])
+  const close = useCallback(() => setActiveIdx(null), [])
+  const prev = useCallback(() => setActiveIdx((i) => (i + count - 1) % count), [count])
+  const next = useCallback(() => setActiveIdx((i) => (i + 1) % count), [count])
 
   return (
     <section id="proyectos" className="mx-auto max-w-[1400px] scroll-mt-20 px-5 py-24 sm:px-8 md:py-32">
@@ -26,9 +34,16 @@ export default function Work() {
         </Reveal>
       </div>
 
-      <WorkIndex onOpen={setActive} />
+      <WorkIndex onOpen={open} />
 
-      <ProjectModal project={active} onClose={() => setActive(null)} />
+      <ProjectModal
+        project={active}
+        onClose={close}
+        onPrev={prev}
+        onNext={next}
+        prevProject={activeIdx === null ? null : projects[(activeIdx + count - 1) % count]}
+        nextProject={activeIdx === null ? null : projects[(activeIdx + 1) % count]}
+      />
     </section>
   )
 }

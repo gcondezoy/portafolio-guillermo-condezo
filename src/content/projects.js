@@ -8,7 +8,8 @@ export const projects = [
     year: "2026",
     role: "Diseño, front-end y backend",
     accent: "#e0b352",
-    shot: "/shots/licoreria.png",
+    shot: "/shots/licoreria.webp",
+    shotSm: "/shots/licoreria-sm.webp",
     tagline: "Tienda y panel de control con base de datos real.",
     blurb:
       "E-commerce con catálogo servido desde Supabase, carrito y pedidos que se guardan en base de datos real. Incluye un panel de administración con analítica, inventario y estados de pedido. El proyecto más completo: diseño, front-end y backend.",
@@ -31,7 +32,8 @@ export const projects = [
     year: "2026",
     role: "Diseño y front-end",
     accent: "#e01e1a",
-    shot: "/shots/gadem.png",
+    shot: "/shots/gadem.webp",
+    shotSm: "/shots/gadem-sm.webp",
     tagline: "Sitio industrial 'tactical telemetry' para un fabricante.",
     blurb:
       "Web multipágina B2B con estética industrial oscura: blueprints técnicos dibujados en SVG, configurador de cotización paso a paso y catálogo de carrocerías para vehículos pesados. Sin fotos de stock, todo ilustrado a medida.",
@@ -53,7 +55,8 @@ export const projects = [
     year: "2026",
     role: "Front-end y SEO",
     accent: "#6d8aa8",
-    shot: "/shots/lucong.png",
+    shot: "/shots/lucong.webp",
+    shotSm: "/shots/lucong-sm.webp",
     tagline: "Sitio corporativo para una constructora en Lima.",
     blurb:
       "Web corporativa para una empresa de proyectos y ejecución de obras civiles. Presenta la empresa, su portafolio de obras y sus servicios, construida con Astro para máxima velocidad y con SEO cuidado en dominio propio.",
@@ -75,7 +78,8 @@ export const projects = [
     year: "2026",
     role: "Front-end, SEO y despliegue",
     accent: "#f5821f",
-    shot: "/shots/laindustrial.png",
+    shot: "/shots/laindustrial.webp",
+    shotSm: "/shots/laindustrial-sm.webp",
     tagline: "Web corporativa con SEO en producción.",
     blurb:
       "Sitio multipágina para Carrocerías La Industrial (Puente Piedra). Paquete SEO completo, formulario sin backend con Web3Forms y ficha de Google Business, ya con dominio propio y Search Console verificado.",
@@ -97,7 +101,8 @@ export const projects = [
     year: "2026",
     role: "Diseño y front-end",
     accent: "#d17b8f",
-    shot: "/shots/mafille.png",
+    shot: "/shots/mafille.webp",
+    shotSm: "/shots/mafille-sm.webp",
     tagline: "Landing de alta gama para un salón holístico.",
     blurb:
       "Landing de una sola página para un salón de belleza y centro holístico en Los Olivos. Estética premium, animaciones cinemáticas y reserva directa por WhatsApp.",
@@ -119,7 +124,8 @@ export const projects = [
     year: "2026",
     role: "Diseño y front-end",
     accent: "#b9986a",
-    shot: "/shots/florence.png",
+    shot: "/shots/florence.webp",
+    shotSm: "/shots/florence-sm.webp",
     tagline: "Sitio editorial 'luxury' de estética francesa.",
     blurb:
       "Sitio multipágina estático con dirección editorial: serif Cormorant, grano de papel y movimiento cinemático. Catálogo filtrable y pedidos por WhatsApp, escrito a mano sin framework para que pese lo mínimo.",
