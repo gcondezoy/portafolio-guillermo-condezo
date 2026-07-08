@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: "Space Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Manrope Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, monospace;
 
@@ -14,7 +14,7 @@
   --color-line-2: #31426f;
   --color-ivory: #eef1fb;
   --color-fog: #9fabce;
-  --color-muted: #6d7aa1;
+  --color-muted: #7885ad;
   --color-accent: #1fd3a3;
   --color-accent-dark: #0c3b30;
 }
@@ -57,6 +57,27 @@
   h1, h2, h3 {
     font-family: var(--font-display);
     letter-spacing: -0.02em;
+  }
+
+  /* Scrollbar de marca: delgado, navy, thumb que responde al hover */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-line-2) transparent;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-ink);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-line-2);
+    border-radius: 5px;
+    border: 2px solid var(--color-ink);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-muted);
   }
 }
 

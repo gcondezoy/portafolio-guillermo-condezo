@@ -5,11 +5,15 @@ import { projects } from '../content/projects'
 import HeroGallery from './HeroGallery'
 import { ClipText } from './TextReveal'
 import Magnetic from './Magnetic'
+import Diamond from './Diamond'
 
 const EASE = [0.16, 1, 0.3, 1]
 
 export default function Hero() {
   const reduce = useReducedMotion()
+  // Última palabra del titular pegada al rombo para que nunca quede huérfano.
+  const headlineWords = profile.headline[1].replace(/\.$/, '').split(' ')
+  const headlineLast = headlineWords.pop()
   const fade = (i) => ({
     initial: reduce ? false : { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 },
@@ -43,9 +47,15 @@ export default function Hero() {
           <span className="uppercase">{profile.location}</span>
         </motion.p>
 
-        <h1 className="font-display text-[15vw] font-semibold leading-[0.95] tracking-tight sm:text-6xl lg:text-[5.4rem]">
+        <h1 className="font-display text-[15vw] font-semibold leading-[0.98] tracking-tight sm:text-6xl lg:text-[5rem]">
           <ClipText delay={0.15}>{profile.headline[0]}</ClipText>
-          <ClipText delay={0.28} className="text-fog">{profile.headline[1]}</ClipText>
+          <ClipText delay={0.28} className="text-fog">
+            {headlineWords.join(' ')}{' '}
+            <span className="whitespace-nowrap">
+              {headlineLast}
+              <Diamond size={12} className="ml-2.5 align-baseline" />
+            </span>
+          </ClipText>
         </h1>
 
         <motion.p {...fade(3)} className="mt-8 max-w-[46ch] text-lg leading-relaxed text-fog">

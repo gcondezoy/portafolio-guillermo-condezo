@@ -36,15 +36,16 @@ export default function WorkIndex({ onOpen }) {
                 hovered !== null && hovered !== i ? 'opacity-40' : 'opacity-100'
               }`}
             >
-              {/* barra de acento a la izquierda */}
-              <span
-                className="absolute left-0 top-1/2 h-0 w-[3px] -translate-y-1/2 rounded-full transition-all duration-300 group-hover:h-[70%]"
-                style={{ backgroundColor: p.accent }}
-                aria-hidden="true"
-              />
-
-              <span className="pl-3 font-mono text-xs text-muted transition-colors md:pl-5 md:text-sm">
-                {String(i + 1).padStart(2, '0')}
+              {/* rombo de marca: aparece rotando al pasar el cursor */}
+              <span className="flex items-center gap-3 md:gap-4">
+                <span
+                  aria-hidden="true"
+                  className="h-2 w-2 shrink-0 scale-0 bg-accent transition-transform duration-300 ease-out group-hover:rotate-45 group-hover:scale-100 group-focus-visible:rotate-45 group-focus-visible:scale-100"
+                  style={{ borderRadius: 1 }}
+                />
+                <span className="font-mono text-xs text-muted md:text-sm">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
               </span>
 
               <span className="flex min-w-0 items-center gap-4">
@@ -91,7 +92,7 @@ export default function WorkIndex({ onOpen }) {
               scale: hovered !== null ? 1 : 0.92,
             }}
             transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="-translate-y-1/2 translate-x-7 overflow-hidden rounded-xl border border-line-2 bg-surface shadow-[0_30px_80px_-30px_rgba(0,0,0,0.9)]"
+            className="-translate-y-1/2 translate-x-7 overflow-hidden rounded-xl bg-surface shadow-[0_30px_80px_-30px_rgba(0,0,0,0.9)]"
             style={{ width: 340 }}
           >
             <div className="flex items-center gap-1.5 border-b border-line/80 px-3 py-2">

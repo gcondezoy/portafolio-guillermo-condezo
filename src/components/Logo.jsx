@@ -26,7 +26,7 @@ export default function Logo({ showText = true, size = 36, textClass = 'text-ivo
         )}
       </span>
       {showText && (
-        <span className={`font-display font-semibold tracking-tight ${textClass}`}>
+        <span className={`font-display font-semibold lowercase tracking-tight ${textClass}`}>
           {profile.brand}
         </span>
       )}

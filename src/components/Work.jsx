@@ -18,10 +18,7 @@ export default function Work() {
   return (
     <section id="proyectos" className="mx-auto max-w-[1400px] scroll-mt-20 px-5 py-24 sm:px-8 md:py-32">
       <div className="max-w-3xl">
-        <Reveal>
-          <p className="font-mono text-xs uppercase tracking-widest text-muted">Trabajo seleccionado</p>
-        </Reveal>
-        <h2 className="mt-4 font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+        <h2 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
           <ClipText>Seis clientes,</ClipText>
           <ClipText delay={0.08} className="text-fog">seis rubros distintos.</ClipText>
         </h2>

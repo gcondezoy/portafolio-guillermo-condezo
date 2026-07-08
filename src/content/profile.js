@@ -20,13 +20,6 @@ export const profile = {
     "Desarrollador web en Lima. Diseño, front-end, backend y puesta en producción. Seis productos de cliente, todos en línea.",
 }
 
-export const stats = [
-  { value: 6, label: "proyectos" },
-  { value: 6, label: "en producción" },
-  { value: 5, label: "sectores" },
-  { value: 1, label: "con panel admin" },
-]
-
 export const services = [
   {
     title: "Sitios y landings a medida",

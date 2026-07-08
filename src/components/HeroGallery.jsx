@@ -2,7 +2,7 @@ import { projects } from '../content/projects'
 
 function Shot({ p }) {
   return (
-    <figure className="overflow-hidden rounded-xl border border-line bg-surface shadow-[0_24px_60px_-40px_rgba(0,0,0,0.9)]">
+    <figure className="overflow-hidden rounded-xl border border-line bg-surface">
       <div className="flex items-center gap-1.5 border-b border-line/70 px-3 py-1.5">
         <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: p.accent }} />
         <span className="font-mono text-[9px] uppercase tracking-widest text-muted">{p.name}</span>

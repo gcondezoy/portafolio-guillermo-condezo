@@ -19,15 +19,6 @@ export default function Contact() {
     >
       <div className="mx-auto max-w-[1400px] px-5 py-28 text-center sm:px-8 md:py-40">
         <Reveal>
-          {profile.available && (
-            <p className="mb-8 inline-flex items-center gap-2.5 font-mono text-xs uppercase tracking-widest text-fog">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent/70" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-              </span>
-              {profile.availableText}
-            </p>
-          )}
           <h2 className="mx-auto max-w-[16ch] font-display text-5xl font-semibold leading-[1.03] tracking-tight sm:text-7xl">
             <WordReveal text="¿Tienes un proyecto en mente?" stagger={0.06} />
           </h2>
