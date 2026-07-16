@@ -23,17 +23,8 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-14 px-5 pt-28 pb-16 sm:px-8 lg:min-h-[100dvh] lg:grid-cols-12 lg:gap-8 lg:pt-24 lg:pb-0"
+      className="relative mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-14 px-5 pt-28 pb-16 sm:px-8 lg:min-h-[100dvh] lg:grid-cols-12 lg:gap-8 lg:pt-24 lg:pb-0"
     >
-      {/* Profundidad: glow teal arriba a la derecha, muy sutil */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-[1]"
-        style={{
-          background:
-            'radial-gradient(52% 44% at 78% 12%, rgba(31,211,163,0.07), transparent 70%), radial-gradient(40% 36% at 8% 86%, rgba(49,66,111,0.28), transparent 72%)',
-        }}
-      />
       <div className="lg:col-span-7">
         <motion.p {...fade(0)} className="mb-7 inline-flex items-center gap-2.5 font-mono text-xs tracking-widest text-fog">
           {profile.available && (
