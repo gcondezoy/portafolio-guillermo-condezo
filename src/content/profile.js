@@ -17,25 +17,35 @@ export const profile = {
   headline: ["Webs a medida,", "del diseño al deploy."],
   // Subtexto del hero (máx ~20 palabras).
   intro:
-    "Desarrollador web en Lima. Diseño, front-end, backend y puesta en producción. Seis productos de cliente, todos en línea.",
+    "Estudio de desarrollo en Lima. Diseño webs, agentes de WhatsApp y automatización para negocios reales. Seis proyectos, todos en línea.",
 }
 
 export const services = [
   {
-    title: "Sitios y landings a medida",
-    body: "Del boceto al deploy: diseño propio, código limpio y una web que carga rápido y se ve cara.",
+    title: "Webs a medida",
+    body: "Landings, sitios corporativos y multipágina. Diseño propio, código limpio y una web que carga rápido y se ve cara.",
+  },
+  {
+    title: "Agentes de WhatsApp",
+    tag: "Nuevo",
+    body: "Un asistente que atiende, responde dudas, toma pedidos y agenda citas por ti, 24/7. Tu negocio deja de perder mensajes de madrugada.",
   },
   {
     title: "Tiendas y e-commerce",
-    body: "Catálogo, carrito y pedidos por WhatsApp. Con base de datos real cuando el negocio lo pide.",
+    body: "Catálogo, carrito y pedidos por WhatsApp, con base de datos y panel de control cuando el negocio lo pide.",
+  },
+  {
+    title: "Automatización e integraciones",
+    tag: "Nuevo",
+    body: "Conecto WhatsApp, formularios, pagos y hojas de cálculo para que las tareas repetitivas se hagan solas.",
   },
   {
     title: "Paneles de administración",
-    body: "Dashboards de ventas, inventario y usuarios para que el dueño gestione su negocio sin depender de nadie.",
+    body: "Dashboards de ventas, inventario y usuarios para gestionar el negocio sin depender de nadie.",
   },
   {
     title: "SEO y puesta en producción",
-    body: "JSON-LD, sitemap, Search Console y despliegue en Vercel. Listo para que Google lo encuentre.",
+    body: "Sitemap, datos estructurados, Search Console y despliegue. Listo para que Google lo encuentre.",
   },
 ]
 

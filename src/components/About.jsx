@@ -8,20 +8,20 @@ export default function About() {
     <section id="servicios" className="border-t border-line/70 bg-ink-2/30">
       <div className="mx-auto max-w-[1400px] scroll-mt-20 px-5 py-24 sm:px-8 md:py-32">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
             <h2 className="font-display text-4xl font-semibold tracking-tight sm:text-5xl">
-              <ClipText>Del boceto al deploy,</ClipText>
-              <ClipText delay={0.08} className="text-fog">sin plantillas.</ClipText>
+              <ClipText>Un estudio,</ClipText>
+              <ClipText delay={0.08} className="text-fog">no una plantilla.</ClipText>
             </h2>
             <Reveal delay={0.12}>
               <p className="mt-6 max-w-[48ch] text-lg leading-relaxed text-fog">
-                Soy {profile.name.split(' ')[0]}, el desarrollador detrás de {profile.brand}, desde{' '}
-                {profile.location}. Diseño y construyo sitios para negocios reales: rápidos, con buen
-                SEO y pensados para vender. Cada proyecto arranca en blanco, no en una plantilla.
+                Soy {profile.name.split(' ')[0]}, detrás de {profile.brand}, desde {profile.location}.
+                Construyo la presencia digital de negocios reales: su web, su tienda y, ahora, sus
+                agentes de WhatsApp. Rápido, con buen SEO y pensado para vender.
               </p>
               <p className="mt-5 max-w-[48ch] leading-relaxed text-muted">
                 Trabajo el front-end de principio a fin y, cuando el negocio lo pide, también el
-                backend y la base de datos.
+                backend, la base de datos y las automatizaciones.
               </p>
             </Reveal>
           </div>
@@ -36,8 +36,13 @@ export default function About() {
                       className="mt-[0.65rem] transition-transform duration-300 group-hover:rotate-[135deg]"
                     />
                     <div>
-                      <h3 className="font-display text-xl font-medium tracking-tight sm:text-2xl">
+                      <h3 className="flex flex-wrap items-center gap-x-2.5 gap-y-1 font-display text-xl font-medium tracking-tight sm:text-2xl">
                         {s.title}
+                        {s.tag && (
+                          <span className="rounded-full border border-accent/40 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-accent">
+                            {s.tag}
+                          </span>
+                        )}
                       </h3>
                       <p className="mt-2 max-w-[52ch] leading-relaxed text-fog">{s.body}</p>
                     </div>
